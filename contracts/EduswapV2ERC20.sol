@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-import "./interfaces/IUniswapV2ERC20.sol";
+import "./interfaces/IEduswapV2ERC20.sol";
 
-contract UniswapV2ERC20 is IUniswapV2ERC20 {
-    string public constant name = "Uniswap V2";
-    string public constant symbol = "UNI-V2";
+contract EduswapV2ERC20 is IEduswapV2ERC20 {
+    string public constant name = "Eduswap V2";
+    string public constant symbol = "EDU-V2";
     uint8 public constant decimals = 18;
     uint public totalSupply;
     mapping(address => uint) public balanceOf;
@@ -73,7 +73,7 @@ contract UniswapV2ERC20 is IUniswapV2ERC20 {
         bytes32 r,
         bytes32 s
     ) external {
-        require(deadline >= block.timestamp, "UniswapV2: EXPIRED");
+        require(deadline >= block.timestamp, "EduswapV2: EXPIRED");
         bytes32 digest = keccak256(
             abi.encodePacked(
                 "\x19\x01",
@@ -93,7 +93,7 @@ contract UniswapV2ERC20 is IUniswapV2ERC20 {
         address recoveredAddress = ecrecover(digest, v, r, s);
         require(
             recoveredAddress != address(0) && recoveredAddress == owner,
-            "UniswapV2: INVALID_SIGNATURE"
+            "EduswapV2: INVALID_SIGNATURE"
         );
         _approve(owner, spender, value);
     }
