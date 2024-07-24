@@ -22,3 +22,6 @@ main()
         console.error(error);
         process.exit(1);
     });
+// Deploying contracts with the account: 0x9E18268FA21a3612309211cbE186eA1B81469d96
+// EduswapV2Factory deployed to: 0xAdC632cf7d62cEEF5cEA6369B49684E835f62f36
+// Utils deployed to: 0x9A0ca57DD72eac6D38FA150cC7eF1cAce8682E13
